@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        // 匿名函式 NO NAME FUNCTION
+        // 用在一次性的地方，或者是 CALL BACK FUNCTION
+        (function (){
+            console.log('hi');
+            console.log('1+1', 1+1);
+        })()
+
+        // 常態性的功能，我們會寫成一個有名字的函式
+        function sayHi(){
+            console.log('say hi');
+        }
+
+        sayHi();
+        sayHi();
+
+        // 函式可以帶入參數使用
+        function add(x, y){
+            console.log('x:',x);
+            console.log('y:',y);
+            console.log(x+y);
+        }
+
+        add(3,5);
+        // add(2,2);
+    </script>
+</body>
+</html>

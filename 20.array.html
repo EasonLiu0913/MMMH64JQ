@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        // const myArray = ['product1.jpg','product2.jpg','product3.jpg','product4.jpg','product5.jpg']
+        // console.log('myArray:',myArray);
+        // console.log('myArray[2]:',myArray[3]);
+
+        const myArray2 = ['100a', 'b20' , 'c', 10000 , 3, 9, true, false];
+
+        const config1 = '';
+        const config2 = 'birth';
+
+        const isConfig1 = config1 || 'no config1';
+        console.log('isConfig1:',isConfig1);
+
+        const userList = [
+            {id:1, username:'Alex', tel:'0912345678', birth:'1/1'}, 
+            {id:2, username:'Bill', birth:'12/31', tel:'0987654321'}
+        ]
+
+        if(userList[0].username == 'Alex' || userList[0].birth == '12/1'){
+                console.log('userList[0].id:', userList[0].id);
+        }
+        else{
+            console.log('you\'re not Alex!!!!');
+        }
+
+        // const userList2 = {
+        //     Alex:{tel:'0912345678', birth:'1/1'},
+        //     Bill:{birth:'12/31', tel:'0987654321'}
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+            <style>
+                .wrap{
+                    width: 800px;
+                    height: 400px;
+                    overflow: hidden;
+                    outline: 1px solid red;
+                }
+
+                ul.train{
+                    width: 500%;
+                    transition: .5s;
+                    transform: translateX(-0px);
+                }
+
+                ul.train li{
+                    width: 800px;
+                    /* flex-basis: 0;
+                    flex-grow: 1; */
+                }
+
+                ul.train li img{
+                    width: 100%;
+                }
+
+            </style>
+</head>
+<body>
+    <div class="button-group">
+        <button id="">page1</button>
+        <button id="">page2</button>
+        <button id="">page3</button>
+        <button id="">page4</button>
+        <button id="">page5</button>
+    </div>
+
+    <div class="next-prev-page">
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+    </div>
+    <div class="wrap">
+        <ul class="train list-unstyled d-flex">
+            <li>
+                <img src="./imgs/slide1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide5.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        let nowPage = 0;
+
+        $('#next').click(function(){
+            if(nowPage < 4){
+                nowPage = nowPage + 1;
+            }
+
+            // console.log('nowPage:',nowPage);
+            
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+            moveX(nowPage);
+        })
+
+        $('#prev').click(function(){
+            if(nowPage > 0){
+                nowPage = nowPage - 1;
+            }
+            // console.log('nowPage:',nowPage);
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+            moveX(nowPage);
+        })
+
+        // UNIT TEST
+        function moveX (nowPage){
+            const movement = nowPage * -800;
+            $('ul.train').css('transform', `translateX(${movement}px)`);
+        }
+
+        $('.button-group > button').click(function(){
+            nowPage = $(this).index();
+            // console.log('nowPage:',nowPage);
+
+            moveX(nowPage);
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+        })
+
+        // $('#page1').click(function(){
+        //     console.log('page1');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(0px)');
+        // })
+
+        // $('#page2').click(function(){
+        //     console.log('page2');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(-800px)');
+        // })
+
+        // $('#page3').click(function(){
+        //     console.log('page2');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(-1600px)');
+        // })
+    </script>
+</body>
+</html>

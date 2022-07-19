@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1,
+      h2 {
+        color: red;
+      }
+    </style>
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(function(){
+            $('h1').css('color','orange')
+        })
+    </script> -->
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+    <h2 id="myBox" class="box">box</h2>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+      $('h1').css('color', 'orange');
+      $('#myBox').css('color', 'yellow');
+      $("h1, h2").css('color', 'red');
+
+      // 變數 variable
+      var weekday = "Wed."
+
+      // weekday = "Mon."
+
+      // es5
+      // $('h1').text("it\'s" + weekday + " today") 
+
+      // es6 模板字串
+      $('h1').text(`it's ${weekday} today`)
+    </script>
+  </body>
+</html>

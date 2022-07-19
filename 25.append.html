@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appdend</title>
+</head>
+<body>
+    <button>Add</button>
+    <div class="container">
+        <div class="row">
+            <!-- before -->
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- append -->
+            </ul>
+            <!-- after -->
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $('ul').append('<li>item 3</li>')
+        // $('ul').append('<li>item 4</li>')
+        let nowIndex = 3;
+
+        $('button').click(function(){
+            console.log('hi');
+            // $('ul').append('<li>item '+ nowIndex +'</li>')
+            // $('ul').prepend('<li>item '+ nowIndex +'</li>')
+            $('ul').after('<li>item '+ nowIndex +'</li>')
+            // 我希望 nowIndex 在每次點擊後，把自己的數字 +1
+            nowIndex = nowIndex + 1;
+        })
+
+        
+    </script>
+</body>
+</html>

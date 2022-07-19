@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <select name="city" id="city">
+                            <option value="0">基隆</option>
+                            <option value="1">台北</option>
+                            <option value="2">新北</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="district" id="district">
+                            <option value="0">七堵</option>
+                            <option value="1">中正</option>
+                            <option value="2">暖暖</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        let districtArray = [
+       ['七堵', '中正', '暖暖'],
+       ['中正', '大安', '信義'],
+       ['蘆洲', '三重', '新店'],
+     ];
+
+
+    //  console.log('districtArray:',districtArray[2][2]);
+
+    //  點左邊、換右邊
+    // 1.使用者更換城市的時間點
+    // 2.可不可以得到使用者更改成哪個城市
+    // 3.用這個城市去取得區域資料
+    // 4.把這個區域資料改到 district option 裡面
+
+    $('#city').change(function(){
+        // console.log('city changed.',$(this).val());
+        const cityNumber = $(this).val();
+        // console.log('district Array:',districtArray[cityNumber]);
+        const districtData = districtArray[cityNumber];
+        // 用迴圈會更方便
+        $('#district option').eq(0).text(districtData[0])
+        $('#district option').eq(1).text(districtData[1])
+        $('#district option').eq(2).text(districtData[2])
+    })
+    </script>
+</body>
+</html>

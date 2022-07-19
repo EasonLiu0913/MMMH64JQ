@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>child filter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row"> 
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <span>span1</span>
+            <div class="col">col3</div>
+            <div class="col">col4</div>
+            <span>span2</span>
+            <div class="col">col5</div>
+            <div class="col">col6</div>
+            <span>span3</span>
+        </div>
+
+        <div class="row"> 
+            <div class="col">row2 col1</div>
+            <div class="col">row2 col2</div>
+            <div class="col">row2 col3</div>
+            <div class="col">row2 col4</div>
+            <div class="col">row2 col5</div>
+            <div class="col">row2 col6</div>
+        </div>
+
+        <div class="row">
+            <div class="col">only col</div>
+            <span>1</span>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $('.col:nth-child(2)').css('background','lightblue')
+        // $('.col:nth-last-child(2)').css('background','lightpink')
+        // $('.col:eq(6)').css('background','red')
+        // $('span:nth-of-type(3)').css('background','red')
+        $('span:only-of-type').css('background','red')
+    </script>
+</body>
+</html>

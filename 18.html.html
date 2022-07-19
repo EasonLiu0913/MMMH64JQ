@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+    <style>
+        span{
+            color: lightcoral;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="sample">Hello <span>World</span></h1>
+    <h1 class="result"></h1>
+
+    
+    <form action="">
+        
+        <label for="password">password</label>
+        <input id="password" class="password" type="password" value="" placeholder="please enter your password...">
+
+        <button id="btnAutoInput" type="button">eye</button>
+    </form>
+    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // console.log('sample html:' ,$('.sample').html() )
+
+        // [功能1] xxxx
+        // 1.拿 .sample 的 HTML 存到 h1Html 變數裡 
+        const h1Html = $('.sample').html();
+        // 2.改 .result 的 HTML
+        // $('.result').html(h1Html);
+        // $('.result').text(h1Html)
+
+
+        // 拿 text 改 text
+        const h1Text = $('.sample').text();
+        $('.result').text(h1Text);
+        
+        
+        $('#btnAutoInput').click(function(event){
+            // console.log('hi');
+            // event.preventDefault();
+            
+            // $('#username').val('John');
+            // console.log($('#password').attr('type'));
+
+            if($('#password').attr('type') == 'password' ){
+                $('#password').attr('type','text')
+            }
+            else{
+                $('#password').attr('type','password')
+            }
+            
+        })
+    </script>
+</body>
+</html>
