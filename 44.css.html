@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.box').click(function(){
+            $(this).css('width','+=100')
+            // $(this).css('width','500px');
+            // console.log('background',$(this).css('background-color'));
+            // const boxBG = $(this).css('background-color');
+
+            // console.log('ture or false:',boxBG == 'rgb(255, 170, 255)');
+
+            // if(boxBG == 'rgb(255, 170, 255)'){
+            //     console.log('if');
+            //     $(this).css({
+            //         backgroundColor: "#aaf",
+            //         width:"500px",
+            //     });
+            // }
+            // else{
+            //     console.log('else');
+            //     $(this).css({
+            //         backgroundColor: "#faf",
+            //         width:"200px",
+            //     });
+            // }
+        })
+    </script>
+</body>
+</html>
