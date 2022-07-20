@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex8</title>
     <style>
-        body{
+        body {
             margin: 0;
             /* height: 300vh; */
             transition: .5s;
         }
-        .wrap{
+
+        .wrap {
             width: 100%;
             height: 50px;
             background-color: #ccc;
             position: fixed;
             top: 0;
         }
-        .box{
+
+        .box {
             width: 50%;
             height: 100%;
             background-color: pink;
         }
 
-        section{
+        section {
             width: 50%;
             height: 100vh;
             outline: 1px solid red;
         }
+
+        .img-wrap {
+            width: 200px;
+            height: 200px;
+            transform: translateY(200px);
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
+
 <body>
     <!-- <div class="wrap">
         <div class="box"></div>
     </div> -->
 
     <section>section1</section>
-    <section>section2</section>
+    <section>
+        <div class="img-wrap">
+            <img src="./imgs/product1.jpg" alt="">
+        </div>
+    </section>
     <section>section3</section>
     <section>section4</section>
     <section>section5</section>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
-        $(window).scroll(function(){
-            console.log('scrollTop:',$(window).scrollTop());
+        $(window).scroll(function () {
+            console.log('scrollTop:', $(window).scrollTop());
             // console.log('body height:',$('body').height());
-            
+
             // const denominator = $('body').height() - $(window).height()
 
             // // console.log('相除:', $(window).scrollTop() / denominator);
@@ -58,18 +80,32 @@
 
             // $('.box').css('width',`${percentage}%`)
 
-            
-            if($(window).scrollTop() >= 1201 && $(window).scrollTop() < 1789){
-                $('body').css('background','orange')
+
+            if ($(window).scrollTop() >= 1201 && $(window).scrollTop() < 1789) {
+                $('body').css('background', 'orange')
             }
-            else if($(window).scrollTop() >= 1790){
-                $('body').css('background','lightpink')
+            else if ($(window).scrollTop() >= 1790) {
+                $('body').css('background', 'lightpink')
+            }
+            else {
+                $('body').css('background', 'none')
+            }
+
+            if ($(window).scrollTop() >= 329) {
+                $('.img-wrap').css({
+                    transform: 'translateY(0px)',
+                    opacity: 1,
+                })
             }
             else{
-                $('body').css('background','none')
+                $('.img-wrap').css({
+                    transform: 'translateY(200px)',
+                    opacity: 0,
+                })
             }
-            
+
         })
     </script>
 </body>
+
 </html>

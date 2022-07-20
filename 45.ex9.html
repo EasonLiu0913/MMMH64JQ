@@ -45,6 +45,40 @@
     <div class="text-center">
         <button id="down"><i class="fa-solid fa-arrow-down"></i></button>
     </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        $('#right').click(function(){
+            // console.log('right');
+            const left = parseInt($('.box').css('left'));
+            // console.log('left:',left);
+            // console.log('typeof left:',typeof left);
+            // console.log(($('.wrap').width() - $('.box').width()));
+            
+            if(left < ($('.wrap').width() - $('.box').width()) ){
+                $('.box').css('left','+=100')
+            }
+            
+        })
+
+        $(document).keydown(function(e){
+            console.log('hi',e.keyCode);
+
+            if(e.keyCode == 39){
+                const left = parseInt($('.box').css('left'));
+                if(left < ($('.wrap').width() - $('.box').width()) ){
+                $('.box').css('left','+=100')
+            }
+            }
+
+            if(e.keyCode == 37){
+                // const left = parseInt($('.box').css('left'));
+                // if(left < ($('.wrap').width() - $('.box').width()) ){
+                $('.box').css('left','-=100')
+            }
+        })
+    </script>
 </body>
 
 </html>
