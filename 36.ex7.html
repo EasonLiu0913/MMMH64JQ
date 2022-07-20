@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex7</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -36,30 +38,66 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         let districtArray = [
-       ['七堵', '中正', '暖暖'],
-       ['中正', '大安', '信義'],
-       ['蘆洲', '三重', '新店'],
-     ];
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義', '松山'],
+            ['蘆洲', '三重', '新店'],
+        ];
 
 
-    //  console.log('districtArray:',districtArray[2][2]);
+        //  console.log('districtArray:',districtArray[2][2]);
 
-    //  點左邊、換右邊
-    // 1.使用者更換城市的時間點
-    // 2.可不可以得到使用者更改成哪個城市
-    // 3.用這個城市去取得區域資料
-    // 4.把這個區域資料改到 district option 裡面
+        //  點左邊、換右邊
+        // 1.使用者更換城市的時間點
+        // 2.可不可以得到使用者更改成哪個城市
+        // 3.用這個城市去取得區域資料
+        // 4.把這個區域資料改到 district option 裡面
 
-    $('#city').change(function(){
-        // console.log('city changed.',$(this).val());
-        const cityNumber = $(this).val();
-        // console.log('district Array:',districtArray[cityNumber]);
-        const districtData = districtArray[cityNumber];
-        // 用迴圈會更方便
-        $('#district option').eq(0).text(districtData[0])
-        $('#district option').eq(1).text(districtData[1])
-        $('#district option').eq(2).text(districtData[2])
-    })
+        $('#city').change(function () {
+            // console.log('city changed.',$(this).val());
+            const cityNumber = $(this).val();
+            // console.log('district Array:',districtArray[cityNumber]);
+            const districtData = districtArray[cityNumber];
+            // 用迴圈會更方便
+            // $('#district option').eq(0).text(districtData[0])
+            // $('#district option').eq(1).text(districtData[1])
+            // $('#district option').eq(2).text(districtData[2])
+
+            // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
+            // 1.自己寫規則，for 迴圈，次數自己決定
+            // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
+
+            // for:
+            // (1)宣告變數 
+            // (2)寫條件，如果為 true 就執行一次 
+            // (3)結束後 i 要怎麼改變 i = i + 1(i++)
+            console.log('districtData:', districtData.length);
+
+            // for(let i = 0; i < districtData.length ; i++) {
+            //     // 要重複做的事
+            //     console.log('i:',i);
+            //     // console.log('i:',districtData[i]);
+            //     // $('#district option').eq(i).text(districtData[i])
+            // }
+
+            // JS 原生的陣列方法
+            // districtData.forEach(function (item, index) {
+            //     console.log('item:',item);
+            //     console.log('index:',index);
+            // });
+
+            // EMPTY 只想執行一次，所以應該放在 CITY CHANGE 的時候。
+            $('#district').empty();
+
+            // JQ 所有的方法只能用在 JQ 的物件，都與原生 JS 不共用
+            $(districtData).each(function (index, item) {
+                console.log('JQ item:', item);
+                console.log('JQ index:', index);
+                // $('#district option').eq(index).text(item)
+                $('#district').append(`<option value="${index}">${item}</option>`)
+
+            })
+        })
     </script>
 </body>
+
 </html>

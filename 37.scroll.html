@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <style>
+        body{
+            width: 300%;
+            height: 300vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            console.log('scrollTop:',$(window).scrollTop());
+            console.log('scrollLeft:',$(window).scrollLeft());
+        })
+
+        $(window).resize(function(){
+            console.log('resize window width:',$(window).width());
+            console.log('resize window height:',$(window).height());
+        })
+    </script>
+</body>
+</html>
