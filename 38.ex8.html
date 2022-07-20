@@ -8,7 +8,8 @@
     <style>
         body{
             margin: 0;
-            height: 300vh;
+            /* height: 300vh; */
+            transition: .5s;
         }
         .wrap{
             width: 100%;
@@ -22,19 +23,52 @@
             height: 100%;
             background-color: pink;
         }
+
+        section{
+            width: 50%;
+            height: 100vh;
+            outline: 1px solid red;
+        }
     </style>
 </head>
 <body>
-    <div class="wrap">
+    <!-- <div class="wrap">
         <div class="box"></div>
-    </div>
+    </div> -->
+
+    <section>section1</section>
+    <section>section2</section>
+    <section>section3</section>
+    <section>section4</section>
+    <section>section5</section>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         $(window).scroll(function(){
             console.log('scrollTop:',$(window).scrollTop());
-            console.log('body height:',$('body').height());
-            console.log('相除:', $(window).scrollTop() / $('body').height());
+            // console.log('body height:',$('body').height());
+            
+            // const denominator = $('body').height() - $(window).height()
+
+            // // console.log('相除:', $(window).scrollTop() / denominator);
+
+            // const percentage = $(window).scrollTop() / denominator * 100;
+
+            // console.log('percentage:',percentage);
+
+            // $('.box').css('width',`${percentage}%`)
+
+            
+            if($(window).scrollTop() >= 1201 && $(window).scrollTop() < 1789){
+                $('body').css('background','orange')
+            }
+            else if($(window).scrollTop() >= 1790){
+                $('body').css('background','lightpink')
+            }
+            else{
+                $('body').css('background','none')
+            }
+            
         })
     </script>
 </body>
