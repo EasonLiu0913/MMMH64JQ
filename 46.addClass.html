@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add class</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+            transition: 1s;
+        }
+
+        .active{
+            background-color: #aaf;
+        }
+
+        .w500{
+            width: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="addClass">add Class</button>
+    <button id="rmClass">rm Class</button>
+    <button id="toggleClass">toggle Class</button>
+    <button id="hasClass">has Class</button>
+    <div class="box active w500"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#addClass').click(function(){
+            $('.box').addClass('active w500')
+        })
+        $('#rmClass').click(function(){
+            $('.box').removeClass('active w500')
+        })
+        $('#toggleClass').click(function(){
+            $('.box').toggleClass('active')
+        })
+        $('#hasClass').click(function(){
+            console.log('has w500:',$('.box').hasClass('w500'));
+
+            if($('.box').hasClass('w500')){
+                // ...
+            }
+        })
+    </script>
+</body>
+</html>

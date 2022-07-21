@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset</title>
+    <style>
+        section{
+            height: 60vh;
+            width: 60%;
+            outline: 2px solid red;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <section id="section1">section1</section>
+    <section id="section2">section2</section>
+    <section id="section3">section3</section>
+    <section id="section4">section4</section>
+    <section id="section5">section5</section>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#section3').offset({top:550,left:200})
+
+        $(window).scroll(function(){
+            console.log('section3 offset().top:',$('#section3').offset().top);
+            console.log('scrollTop:',$(window).scrollTop());
+            console.log('new offset:',$('#section3').offset().top - $(window).height() * 1/2);
+            
+            if($(window).scrollTop() >= ($('#section3').offset().top - $(window).height() * 1/2 )   ){
+                console.log('if');
+                $('#section3').css('background','orange')
+            }
+            else{
+                console.log('else');
+                $('#section3').css('background','none')
+            }
+        })
+
+    </script>
+</body>
+</html>
