@@ -23,14 +23,37 @@
     <div class="container">
         <div class="d-flex justify-content-end">
             <div class="btn-group">
-                <button class="btn btn-info ">S</button>
-                <button class="btn btn-info active">M</button>
-                <button class="btn btn-info ">L</button>
+                <button class="btnS btn btn-info ">S</button>
+                <button class="btnM btn btn-info active">M</button>
+                <button class="btnL btn btn-info ">L</button>
             </div>
         </div>
         <h2>jQuery</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi ullam consequatur a perferendis recusandae doloribus necessitatibus eius earum cum, atque labore voluptate dolorum amet quia totam deleniti dolorem. Inventore, veritatis?</p>
+        <p class="myP">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi ullam consequatur a perferendis recusandae doloribus necessitatibus eius earum cum, atque labore voluptate dolorum amet quia totam deleniti dolorem. Inventore, veritatis?</p>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem at voluptates numquam labore accusamus nihil cum! Cum non id recusandae deleniti. Dicta quae, necessitatibus ad cupiditate quam iusto veniam totam.</p>
     </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.btn-group button').click(function(){
+            console.log('has class:', $(this).hasClass('btnS'));
+
+            $(this).addClass('active').siblings().removeClass('active')
+
+            if($(this).hasClass('btnS')){
+                $('p').removeClass('fontM fontL').addClass('fontS');
+            }
+            if($(this).hasClass('btnM')){
+                $('p').removeClass('fontS fontL').addClass('fontM');
+            }
+            if($(this).hasClass('btnL')){
+                $('p').removeClass('fontM fontS').addClass('fontL');
+            }
+
+         
+        })
+
+        
+    </script>
 </body>
 </html>

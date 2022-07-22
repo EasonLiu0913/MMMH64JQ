@@ -38,5 +38,25 @@
     <section></section>
     <section></section>
     <section></section>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        const navOffsetTop = $('nav').offset().top;
+
+        $(window).scroll(function(){
+            // console.log('navOffsetTop:',navOffsetTop);
+            // console.log('nav offset top:',$('nav').offset().top);
+            // console.log('$(window).scrollTop():',$(window).scrollTop());
+
+            if($(window).scrollTop() >= navOffsetTop){
+                // console.log('nav add fixed');
+                $('nav').addClass('fixed')
+            }
+            else{
+                // console.log('nav remove fixed');
+                $('nav').removeClass('fixed')
+            }
+        })
+    </script>
 </body>
 </html>

@@ -68,5 +68,29 @@
       <section>3</section>
       <section>4</section>
       <section>5</section>
+
+      <script src="./js/jquery-3.6.0.min.js"></script>
+      <script>
+        let lastScroll = 0;
+
+
+          $(window).scroll(function(){
+            let scrollNow =  $(window).scrollTop();
+
+            console.log('lastScroll:', lastScroll);
+            console.log('scrollNow', scrollNow);
+
+            if(scrollNow > lastScroll){
+              $('.navbar').addClass('hidden')
+            }
+            else{
+              $('.navbar').removeClass('hidden')
+            }
+
+
+            lastScroll = scrollNow;
+
+          })
+      </script>
 </body>
 </html>
