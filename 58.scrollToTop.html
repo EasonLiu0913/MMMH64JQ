@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll to top</title>
+    <style>
+        section{
+            height: 100vh;
+            font-size: 500px;
+        }
+
+        div{
+            background-color:lightpink;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+
+    <div>back</div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        $('div').click(function(){
+            $('html, body').animate({scrollTop:0},2000)
+        })
+    </script>
+</body>
+</html>

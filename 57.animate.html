@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+
+    <script>
+        $("#start").click(function () {
+            $(".box").animate({
+                width: '500px',
+                opacity: '0.5',
+                backgroundColor: 'red',
+            },2000).animate({width:'200px',opacity:'1',backgroundColor:'#ffa'},2000);;
+        });
+
+        $('#stop').click(function(){
+            $('.box').stop(true,false);
+        })
+
+    </script>
+</body>
+
+</html>

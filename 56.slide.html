@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+</head>
+<body>
+    <button>Slide1</button>
+
+    <div class="slide1">
+        <h1>slide1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non dolorem consequatur velit at! Iste voluptatem alias et obcaecati dolorem excepturi ratione? Sequi sunt dolore ut consequuntur voluptatem cum asperiores maiores.</p>
+    </div>
+
+    <div class="slide2">
+        <h1>slide2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non dolorem consequatur velit at! Iste voluptatem alias et obcaecati dolorem excepturi ratione? Sequi sunt dolore ut consequuntur voluptatem cum asperiores maiores.</p>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('button').click(function(){
+            $('.slide1').slideToggle('slow');
+        })
+    </script>
+</body>
+</html>

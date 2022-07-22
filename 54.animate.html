@@ -23,6 +23,7 @@
             const animationName = 'animate__' + $(this).data('ani-name');
             
             $('h1').addClass(animationName)
+            $('h1').removeClass(animationName)
 
             $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
                 console.log('h1 animationend');
