@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox">
+                        <input type="checkbox" checked>
                     </td>
                     <td>Elon Musk</td>
                     <td>09123456789</td>
@@ -51,7 +51,26 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         $('input[type="checkbox"]').click(function(){
-            console.log('hi',$(this));
+            console.log('hi',$(this).prop('checked'));
+
+            // console.log('hi',$(this).closest('tr').css('background-color'));
+            // console.log('hi22',$(this).closest('tr').css('background-color'));
+
+            // if($(this).closest('tr').css('background-color') == 'rgb(173, 216, 230)'){
+                
+            //     $(this).closest('tr').css('background','rgba(0, 0, 0, 0)')
+            // }
+            // else{
+                
+            //     $(this).closest('tr').css('background','rgb(173, 216, 230)')
+            // }
+
+            if($(this).prop('checked')){
+                $(this).closest('tr').css('background','rgb(173, 216, 230)')
+            }
+            else{
+                $(this).closest('tr').css('background','rgba(0, 0, 0, 0)')
+            }
         })
     </script>
 </body>
